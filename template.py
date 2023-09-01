@@ -1,6 +1,6 @@
 import pygame, sys, time
 
-from setup import BLACK
+from setup import Colors
 
 class Game:
     def __init__(self, title: str, full_screen=False, fps=60) -> None:        
@@ -35,7 +35,7 @@ class Game:
             
             self.clock.tick(self.fps)
 
-    # Classes to overwrite
+    # Functions to overwrite
     def event_loop(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -54,10 +54,10 @@ class Game:
     
     
     def show_to_screen(self):
-    
-        self.window.fill(BLACK)
+
+        self.window.fill(Colors.WHITE)
         pygame.display.update()
 
 
 if __name__ == "__main__":
-    Game("Test Title").main_loop()
+    Game("Change Title").main_loop()
